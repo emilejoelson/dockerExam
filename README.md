@@ -28,9 +28,9 @@ Telechargement des 3 images
  2 - Spécification de BD
   - docker run -d --name mysql --network connection_trois_conteneur -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD=joelson mysql:8.0.28
 
-5- Mapping de port 8088 vers le port 2222 pour le server backend 
+ 5- Mapping de port 8088 vers le port 2222 pour le server backend 
 - docker run -d --name backend --network connection_trois_conteneur -p 2222:8080 -v backend_data:/path/in/container makouz/tuto_backend:1.0.0
-6 - 
+ 6 - Mapper le port 80 de serveur front vers le port 8088 de la machine
 - docker run -d --name frontend --network connection_trois_conteneur -p 8088:80 makouz/tuto_front:1.0.0
 
 Exercice 03 :
