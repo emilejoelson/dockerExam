@@ -33,6 +33,9 @@ Exercice 02 :
 - 6 - Mapper le port 80 de serveur front vers le port 8088 de la machine
  - docker run -d --name frontend --network connection_trois_conteneur -p 8088:80 makouz/tuto_front:1.0.0
 
+- Test
+ - http://localhost:8088
+
 Exercice 03 :
 Refaisons la même chose avec un fichier docker-compose.yaml
 - Donc, il faut utiliser la commande 
