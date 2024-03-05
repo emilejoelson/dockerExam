@@ -35,42 +35,5 @@ docker run -d --name frontend --network connection_trois_conteneur -p 8088:80 ma
 
 Exercice 03 :
 Refaisons la même chose avec un fichier docker-compose.yaml
-docker-compose.yml :
-version: '3.8'
-
-services:
-  mysql:
-    image: mysql:8.0.28
-    container_name: mysql
-    environment:
-      MYSQL_DATABASE: testdb
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - connection_trois_conteneur
-
-  backend:
-    image: makouz/tuto_backend:1.0.0
-    ports:
-      - "2222:8080"
-    volumes:
-      - backend_data:/path/in/container
-    networks:
-      - connection_trois_conteneur
-
-  frontend:
-    image: makouz/tuto_front:1.0.0
-    ports:
-      - "8088:80"
-    networks:
-      - connection_trois_conteneur
-
-networks:
-  connection_trois_conteneur:
-
-volumes:
-  mysql_data:
-  backend_data:
-
 -Donc, il faut utiliser la commande 
  docker-compose up -d
